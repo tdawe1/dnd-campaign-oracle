@@ -1,0 +1,32 @@
+{
+  "name": "campaign-oracle-monorepo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm -r --parallel dev",
+    "dev:web": "pnpm --filter @campaign-oracle/web dev",
+    "dev:api": "pnpm --filter @campaign-oracle/api dev",
+    "start": "pnpm dev",
+    "stop": "lsof -ti:5173,3001 | xargs -r kill -9 2>/dev/null || true",
+    "restart": "pnpm stop; sleep 1; pnpm dev",
+    "build": "pnpm -r build",
+    "build:web": "pnpm --filter @campaign-oracle/web build",
+    "build:api": "pnpm --filter @campaign-oracle/api build",
+    "test": "pnpm -r test",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r exec tsc --noEmit",
+    "migrate:extract": "tsx scripts/migration/extract.ts",
+    "migrate:transform": "tsx scripts/migration/transform.ts",
+    "migrate:load": "tsx scripts/migration/load.ts",
+    "migrate:validate": "tsx scripts/migration/validate.ts",
+    "migrate:run": "tsx scripts/migration/migrate.ts"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@10.24.0"
+}

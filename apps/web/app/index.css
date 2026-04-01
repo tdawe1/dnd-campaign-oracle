@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --color-neutral-950: #0a0a0a;
+  --color-neutral-900: #171717;
+  --color-neutral-850: #1f1f1f;
+  --color-neutral-800: #262626;
+  
+  --font-sans: Inter, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, monospace;
+}
+
+/* Force dark mode based on .dark class */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Custom Scrollbar for dark theme */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--color-neutral-900); 
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--color-neutral-700); 
+  border-radius: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--color-neutral-600); 
+}
+
+/* Light Mode Overrides - Soft Slate Palette */
+:root[class~="light"] {
+  /* Backgrounds */
+  --color-neutral-950: #f1f5f9; /* Slate 100 - Main BG (Softer than white) */
+  --color-neutral-900: #ffffff; /* White - Panels/Cards (Creates depth) */
+  --color-neutral-850: #f8fafc; /* Slate 50 - Hover states */
+  
+  /* Borders & Separators */
+  --color-neutral-800: #e2e8f0; /* Slate 200 - Borders */
+  --color-neutral-700: #cbd5e1; /* Slate 300 - Darker Borders */
+  
+  /* Text Colors (Slate scale for high readability) */
+  --color-neutral-600: #475569; /* Slate 600 - Secondary Text */
+  --color-neutral-500: #64748b; /* Slate 500 - Icons/Muted */
+  --color-neutral-400: #334155; /* Slate 700 - Darker Secondary (was 600) */
+  --color-neutral-300: #1e293b; /* Slate 800 - Important Text (was 700) */
+  --color-neutral-200: #0f172a; /* Slate 900 - Headings (was 900) */
+  
+  /* Extreme Inversion */
+  --color-white: #0f172a; /* Slate 900 */
+  --color-black: #ffffff; /* White */
+
+  /* BRAND & HIGHLIGHTS - INVERSION FOR CONTRAST */
+  /* On light backgrounds, we need darker accents */
+  
+  /* Indigo: 400 (Light Blue) -> 600/700 (Deep Indigo) */
+  --color-indigo-300: #4f46e5; /* Indigo 600 */
+  --color-indigo-400: #4338ca; /* Indigo 700 */
+  --color-indigo-500: #3730a3; /* Indigo 800 */
+  
+  /* Amber: 500 (Yellow) -> 600/700 (Dark Orange) */
+  --color-amber-200: #d97706; /* Amber 600 */
+  --color-amber-500: #b45309; /* Amber 700 */
+  
+  /* Red: 400 (Light Red) -> 600 (Deep Red) */
+  --color-red-400: #dc2626; /* Red 600 */
+  
+  /* Emerald: 400 (Mint) -> 600 (Green) */
+  --color-emerald-400: #059669; /* Emerald 600 */
+}
+
+/* Dot Grid Pattern */
+.bg-dot-grid {
+  /* Use color-mix to make the dots very subtle (20% opacity of the border color) */
+  background-image: radial-gradient(color-mix(in srgb, var(--color-neutral-800), transparent 80%) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-position: center;
+}

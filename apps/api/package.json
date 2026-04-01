@@ -1,0 +1,46 @@
+{
+    "name": "@campaign-oracle/api",
+    "version": "0.1.0",
+    "main": "src/index.ts",
+    "types": "src/index.ts",
+    "type": "module",
+    "exports": {
+        ".": {
+            "types": "./src/index.ts",
+            "import": "./src/index.ts",
+            "default": "./src/index.ts"
+        }
+    },
+    "scripts": {
+        "dev": "node --import tsx --env-file=.env --watch --watch-path=./src src/index.ts",
+        "build": "tsc",
+        "start": "node dist/index.js",
+        "db:generate": "drizzle-kit generate",
+        "db:migrate": "drizzle-kit migrate",
+        "db:push": "drizzle-kit push",
+        "db:studio": "drizzle-kit studio",
+        "db:seed": "tsx src/db/seed.ts"
+    },
+    "dependencies": {
+        "@campaign-oracle/shared": "workspace:*",
+        "@google-cloud/discoveryengine": "^2.5.2",
+        "@google-cloud/vertexai": "^1.10.0",
+        "@hono/node-server": "^1.8.0",
+        "@hono/zod-validator": "^0.7.5",
+        "better-auth": "^1.4.5",
+        "better-call": "^1.1.5",
+        "dotenv": "^17.2.3",
+        "drizzle-orm": "^0.45.0",
+        "hono": "^4.0.0",
+        "ioredis": "^5.8.2",
+        "postgres": "^3.4.0",
+        "rate-limiter-flexible": "^9.0.0",
+        "zod": "^4.0.0"
+    },
+    "devDependencies": {
+        "@types/node": "^24.10.1",
+        "drizzle-kit": "^0.31.8",
+        "tsx": "^4.7.0",
+        "typescript": "^5.3.0"
+    }
+}
