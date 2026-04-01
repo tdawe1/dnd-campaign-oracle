@@ -1,6 +1,6 @@
 # Campaign Oracle
 
-Campaign Oracle is a GM-facing campaign management app with a React frontend and a TypeScript API. This showcase mirror is a trimmed snapshot of the product code and core technical docs, without deployment history, local data exports, or sidecar tooling.
+Campaign Oracle is a GM-facing campaign management app with a React frontend and a TypeScript API.
 
 ## Structure
 
