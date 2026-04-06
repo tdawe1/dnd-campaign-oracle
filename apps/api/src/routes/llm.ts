@@ -419,7 +419,7 @@ app.post("/analyze-combat", zValidator("json", combatAnalyzeSchema), async (c) =
     
     Extract all combat-related events you can find. If unsure about round numbers, use 0.`;
 
-    const cacheKey = `combat:${crypto.createHash('md5').update(JSON.stringify({ transcript, sessionId })).digest('hex')}`;
+    const cacheKey = `combat:${crypto.createHash('sha256').update(JSON.stringify({ transcript, sessionId })).digest('hex')}`;
 
     // Check Cache
     const cached = redis ? await redis.get(cacheKey) : null;
