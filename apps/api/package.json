@@ -25,7 +25,7 @@
         "@campaign-oracle/shared": "workspace:*",
         "@google-cloud/discoveryengine": "^2.5.2",
         "@google-cloud/vertexai": "^1.10.0",
-        "@hono/node-server": "^1.8.0",
+        "@hono/node-server": "^2.0.11",
         "@hono/zod-validator": "^0.7.5",
         "better-auth": "^1.4.5",
         "better-call": "^1.1.5",
